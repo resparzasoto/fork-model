@@ -12,7 +12,7 @@
 // Constraints:
 // 1 <= s.length, t.length <= 5 * 104
 // s and t consist of lowercase English letters.
-
+/*
 function sortString(s: string): string {
   let arr = s.split("");
   let sorted_arr = arr.sort();
@@ -30,4 +30,33 @@ function isAnagram(s: string, t: string): boolean {
   }
 
   return false;
+}
+*/
+
+function isAnagram(s: string, t: string): boolean {
+  //1.- Verificar que sea del mismo tamaño
+  //2.- Convertir strings a arrays 
+  //3.- Ordenarlos
+  //4.- Comparar posiciones
+
+  //1
+  if (s.length != t.length){
+      return false;
+  }
+
+  //2
+  let arrayS = s.split('');
+  let arrayT = t.split('');
+
+  //3
+  arrayS.sort();
+  arrayT.sort();
+
+  //4
+  for (let i = 0; i < arrayS.length; i++){
+      if (arrayS[i] !== arrayT[i]){
+          return false;
+      }
+  }
+  return true;
 }
